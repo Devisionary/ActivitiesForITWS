@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page title</title>
+  <link href="Css/bootstrap.css" type="text/css" rel="stylesheet">
+  
+  <style>
+    body {
+      
+    }
+    
+    
+  </style>
+</head>
+<body>
+
+<button onclick="Hati()">Click me</button>
+
+<!-- Sliced method -->
+<h2>ORIGINAL ARRAY(slice)</h2>
+<p id="Oarray"></p>
+
+<h2>SLICED ARRAY</h2>
+<p id="Sarray"></p>
+<br>
+<!-- Spliced method -->
+<h2>SPLICED ARRAY</h2>
+<p id="S2array"></p>
+
+<h2>THE ORIGINAL ARRAY(spliced)</h2>
+<p id="O2array"></p>
+
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script>
+  function Hati() {
+    var OrigArray = ["one", "two", "three", "four", "five"];
+
+    //takes the index 2(three) and 3(four)
+    var SliceArray = OrigArray.slice(2, 4);
+
+    document.getElementById("Oarray").innerHTML = OrigArray.join(', ');
+    document.getElementById("Sarray").innerHTML = SliceArray.join(', ');
+ 
+    
+     var SplicedArray = OrigArray.splice(0, 2);
+    //removes and returns the choosen index from the original array 
+    
+    document.getElementById("S2array").innerHTML = SplicedArray.join(', ');
+document.getElementById("O2array").innerHTML = OrigArray.join(', ');
+ 
+ 
+ 
+  };
+</script>
+
+</body>
+</html>
