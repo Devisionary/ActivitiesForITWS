@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Page title</title>
+      <style>
+      h2, h3 {
+        color: #fddcb1;
+        text-align: center;
+        text-shadow:  1px 2px 1px darkgreen;
+        
+      }
+      form {
+        padding: 12px;
+      }
+      label {
+        font-size ;
+        font-family: Times New Roman;
+        font-weight: normal;
+        color: black;
+        text-shadow: 3px 3px 5px white;
+      }
+.btn-primary, .btn-primary:hover {
+  border-radius: 50px !important;
+  color: black !important;
+  background-color: #fddcb1 !important;
+  border-color: #fddcb1 !important;
+  box-shadow: 0 0 0 0.25rem rgba(253, 220, 177, );
+}
+  .btn-primary:hover:active {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .w3-button {
+    border-radius: 50px;
+    background-color: #fddcb1 !important;
+    border-radius: 50px !important;
+  }
+  .w3-button:hover:active {
+    text-transform: uppercase;
+    background-color: #fddcb1;
+  }
+a {
+  text-decoration: none;
+  margin: auto; 
+  border: 3px groove white !important;
+}
+      
+      </style>
+      <link href="Css/bootstrap.css" type="text/css" rel="stylesheet" >
+     <link rel="stylesheet" href="Css/Lab2.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+      <script src="https://kit.fontawesome.com/57b764125e.js" crossorigin="anonymous"></script>
+   </head>
+   <body>
+   
+   <div class="order-container">
+   
+   <h2>Horti Café</h2>
+   <div class="form-container">
+   <form onsubmit="getTotal(event)">
+   <h3>Order Form</h3>
+   <hr class="line">
+ <div class="form-floating mb-3 mt-3">
+    <input type="text" class="form-control" id="Customer-namename" placeholder="Enter name" name="Customer-name" required>
+    <label for="Customer-name" class="form-label">Customer name:</label>
+  </div>
+  
+<label for="order-type">Order type:</label>
+        <select  class="form-select" name="order-type" id="order-type">
+            <option
+            value="Dine in">Dine in</option>
+            <option
+            value="Take out">Take out</option>
+            <option
+            value="Delivery">Delivery</option>
+   </select>
+   
+<div class="form-floating mb-3 mt-3">
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    <label for="email" class="form-label">Email:</label>
+  </div>
+  
+<div class="form-floating mb-3 mt-3">
+  <input type="number" class="form-control" id="number" name="number" placeholder="Enter your contact number" maxlength="11">
+<label for="number" class="form-label">Enter your contact number:</label>
+</div>
+   
+   
+<p><b><i class="fa-solid fa-utensils"></i>        FOOD CHOICE:</b></p>
+<div class="form-check">
+      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+      <label class="form-check-label" for="check1">($5)PLAIN CHEESECAKE</label>
+      <input type="number" id="food1" class="quantity" min="1" disabled>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+      <label class="form-check-label" for="check2">($5)UBE CHEESECAKE</label>
+      <input type="number" id="food2" class="quantity" min="1" disabled>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="check3" name="option3">
+      <label class="form-check-label" for="check3">($4)PIZZA</label>
+     <input type="number" id="food3" class="quantity" min="1" disabled>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="check4" name="option4">
+      <label class="form-check-label" for="check4">($3)PASTA</label>
+      <input type="number" id="food4" class="quantity" min="1" disabled>
+    </div>
+<br>
+<p><b><i class="fa-solid fa-mug-saucer"></i>  DRINK CHOICE:</b></p>
+<span>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="drink1" name="option_drink1">
+      <label class="form-check-label" for="drink1">($3)ESPRESSO</label>
+      <input type="number" id="num1" class="quantity" min="1" disabled>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="drink2" name="option_drink2">
+      <label class="form-check-label" for="drink2">($4)MATCHA LATTE</label>
+   <input type="number" id="num2" class="quantity" min="1" disabled>
+    </div>
+
+
+<!--
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="drink" id="drink1">
+  <label class="form-check-label" for="drink1">
+    ($3)
+  </label>
+</div>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="drink" id="drink4">
+  <label class="form-check-label" for="drink4">
+    ($4)MATCHA LATTE
+  </label>
+</div>
+-->
+
+<br>
+<label for="requirements">Any allergies/Special Requirements:</label>
+<textarea class="form-control" rows="2" id="requirements" name="text"></textarea>
+<hr class="line">
+
+<p><strong>Amount to pay: </strong>$<span id="showTotal"></span></p>
+
+    <div style="text-align: center; ">
+    <input type="submit" class="btn btn-primary" value="Submit Order" style="margin: auto; border: 3px groove white !important;" 
+    onclick="getTotal()">
+  </div>
+  
+  
+   </form>
+   </div>
+   <br>
+  <div style="text-align: center;">
+<a href="Lab1.html" class="w3-button">Back to Menu</a>
+   </div>
+   
+   
+<script src="js/Lab3.js" type="text/javascript" charset="utf-8">
+</script>
+   </body>
+</html>

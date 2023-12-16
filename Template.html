@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Page title</title>
+      <style>
+      button {
+        margin: auto;
+      }
+      #testButton {
+        margin: auto;
+        padding: 10px;
+        text-transform: capitalize;
+      }
+      .container {
+        margin-top: 50px;
+        text-align: center;
+      }
+      </style>
+      
+      <link href="Css/bootstrap.css" type="text/css" rel="stylesheet" >
+   </head>
+   <body>
+   
+<div class="container">
+   <button id="testButton">Tap me</button>
+</div>
+
+
+
+
+
+
+
+
+   
+<script src="js/jquery-3.7.1.js" type="text/javascript">
+      </script>
+<script  src="javascript/bootstrap.js" type="text/javascript">
+      </script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+      $("#testButton").on("click", function() {
+        alert("Onic Time!");
+      });
+    });
+  </script>
+   </body>
+</html>
